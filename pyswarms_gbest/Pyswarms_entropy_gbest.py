@@ -133,7 +133,7 @@ class GlobalBestPSO_entropy(SwarmOptimizer):
             :code:`None` if you wish to generate the particles randomly.
         """
         super(GlobalBestPSO_entropy, self).__init__(
-            n_particles=200,
+            n_particles=50,
             dimensions=dimensions,
             options=options,
             bounds=bounds,
