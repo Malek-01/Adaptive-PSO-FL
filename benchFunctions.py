@@ -148,7 +148,6 @@ functions_dict = {
     "Discus": Discus,
     "Rastrigin": Rastrigin,
     "Sphere": Sphere,
-    "Levi": Levi,
     "Levy": Levy,
     "Ellipsoid": Ellipsoid,
     "Schaffer2": Schaffer2,
