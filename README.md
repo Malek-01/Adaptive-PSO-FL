@@ -1,6 +1,6 @@
 # Adaptive-PSO-FL
 
-The study presents an adaptive variant of particle swarm optimization that leverages fitness landscape analysis, specifically focusing on ruggedness. To assess its performance, the provided code has been  tested across nine global optimization benchmark functions. The code is designed with a user-friendly graphical interface, allowing users to select both the objective function of interest and the specific variant of the particle swarm optimization (PSO) algorithm.
+The study presents an adaptive variant of particle swarm optimization that leverages fitness landscape analysis, specifically focusing on ruggedness. To assess its performance, the provided code has been  tested across ten global optimization benchmark functions. The code is designed with a user-friendly graphical interface, allowing users to select both the objective function of interest and the specific variant of the particle swarm optimization (PSO) algorithm.
 
 The algorithms can be run by executing the file 'main.py'. Then, a graphical interface will open, allowing the algorithms to be tested on the 10 functions.
 
