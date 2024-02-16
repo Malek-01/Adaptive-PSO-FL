@@ -24,12 +24,22 @@ def plot(func_bench):
     mean_it_SPSO, min_run_SPSO = np.mean(spso, axis=1), np.min(spso, axis=0)
     mean_it_HCPSO, min_run_HCPSO = np.mean(hcpso, axis=1), np.min(hcpso, axis=0)
     mean_it_EPSO, min_run_EPSO = np.mean(epso, axis=1), np.min(epso, axis=0)
-    mean_it_CPSO = [math.log(x) for x in mean_it_CPSO] 
-    mean_it_SPSO= [math.log(x) for x in mean_it_SPSO]
-    mean_it_HCPSO = [math.log(x) for x in mean_it_HCPSO]
-    mean_it_EPSO = [math.log(x) for x in mean_it_EPSO]
     h1, h2, h3 = optimize(func_bench)
 
+    print("mean_it_CPSO")   
+    print(mean_it_CPSO[999])
+    print("mean_it_SPSO")   
+    print(mean_it_SPSO[999])
+    print("mean_it_HCPSO")   
+    print(mean_it_HCPSO[999])
+    print("mean_it_EPSO")   
+    print(mean_it_EPSO[999])
+    print("h1")   
+    print(h1[999])
+    print("h2")   
+    print(h2[999])
+    print("h3")   
+    print(h3[999])
     # Plotting
     plt.figure(figsize=(12, 8))
     plt.plot(mean_it_CPSO, label='CPSO')
@@ -44,6 +54,11 @@ def plot(func_bench):
     plt.title("Convergence Comparison of PSO Variants on "+func_bench.__name__+" Function", fontsize=16)
     plt.legend(fontsize=12)
     plt.grid(True)
+    np.savetxt('output_values.csv', np.vstack((h1, h2, h3, mean_it_CPSO, mean_it_SPSO, mean_it_HCPSO, mean_it_EPSO)).T, delimiter=',')
+
+# Set the limits for x and y axes to zoom in on the first, let's say, 50 iterations
+#    plt.xlim(0, 100)  # Adjust the values according to your desired range
+#    plt.ylim(0, 1000)  # Adjust the values according to your desired range for the y-axis
     plt.yscale('log')  # Using a logarithmic scale for better visualization of convergence
     plt.tight_layout()
     plt.show()
