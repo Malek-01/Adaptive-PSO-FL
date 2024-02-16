@@ -133,6 +133,28 @@ def Schaffer2(x):
         / ((1 + 0.001 * (x_ ** 2.0 + y_ ** 2.0)) ** 2.0)
     )
 
+
+def Step(x):
+    if len(x.shape) == 1:
+        return np.sum(np.floor(x + 0.5) ** 2)
+    else:
+        return np.sum(np.floor(x + 0.5) ** 2, axis=1)
+    # Dictionnaire de fonctions
+    
+functions_dict = {
+    "Griewank": Griewank,
+    "Cigar": Cigar,
+    "Ackley": Ackley,
+    "Discus": Discus,
+    "Rastrigin": Rastrigin,
+    "Sphere": Sphere,
+    "Levi": Levi,
+    "Levy": Levy,
+    "Ellipsoid": Ellipsoid,
+    "Schaffer2": Schaffer2,
+    "Step": Step,
+}
+
 def Weierstrass(x):
     a = 0.5
     b = 3.0
@@ -158,18 +180,8 @@ def Weierstrass(x):
 
 
 
-# Dictionnaire de fonctions
-functions_dict = {
-    "Griewank": Griewank,
-    "Cigar": Cigar,
-    "Ackley": Ackley,
-    "Discus": Discus,
-    "Rastrigin": Rastrigin,
-    "Sphere": Sphere,
-    "Levi": Levi,
-    "Levy": Levy,
-    "Ellipsoid": Ellipsoid,
-    "Schwefel": Schwefel,
-    "Schaffer2": Schaffer2,
-    "Weierstrass": Weierstrass
-}
+def Schwefel(x):
+    if len(x.shape) == 1:
+        return 418.9829 * len(x) - np.sum(x * np.sin(np.sqrt(np.abs(x))))
+    else:
+        return 418.9829 * x.shape[1] - np.sum(x * np.sin(np.sqrt(np.abs(x))), axis=1)
